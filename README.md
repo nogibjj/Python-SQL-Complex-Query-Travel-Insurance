@@ -1,48 +1,54 @@
 [![CI](https://github.com/zhuminghui17/python-template/actions/workflows/cicd.yml/badge.svg)](https://github.com/zhuminghui17/python-template/actions/workflows/cicd.yml)
 
-This is the Python template for IDS721 Data Engineering Systems.
+## Overview
+This Python script is designed to manage the Travel Insurance Prediction dataset using SQLite. It provides functionality to load the dataset into a SQLite database, and to perform Create, Read, Update, and Delete (CRUD) operations on the data.
 
-This document provides an overview of the key components within the project repository.
+## Features
+- Database Initialization: Loads the Travel Insurance Prediction dataset into a SQLite database.
+- CRUD Operations: Supports creating, reading, updating, and deleting records in the database.
+- User-friendly Messages: Prints informative messages to the console for each operation, enhancing the user experience.
 
-### `.devcontainer`
-- **`Dockerfile`**: Defines the container's build process and environment.
-- **`devcontainer.json`**: Contains configuration settings for the development environment in VS Code.
+## Dataset Structure
+The Travel Insurance Prediction dataset includes the following columns:
+- Age
+- Employment Type
+- GraduateOrNot
+- AnnualIncome
+- FamilyMembers
+- ChronicDiseases
+- FrequentFlyer
+- EverTravelledAbroad
+- TravelInsurance
 
-### `workflows`
-- Contains GitHub Actions workflows for automated build, test, and deployment pipelines.
+## Prerequisites
+Before running the script, ensure you have the following installed:
 
-### `.gitignore`
-- Lists the files and directories that Git should ignore.
+- Python 3
+- SQLite3
+- Pandas (for reading the dataset)
 
-### `Makefile`
-- Used for automating compilation, testing, and other development tasks on Unix-based systems.
 
-### `README.md`
-- Offers instructions and an introduction to the project.
+## Getting Started
+Setting Up the Environment:
+- Ensure Python 3 is installed on your system.
+- Install Pandas using pip install pandas if not already installed.
+- Placing the Dataset:
+    - Place your "TravelInsurancePrediction.csv" dataset in the same directory as the script.
+- Running the Script:
+- Run the script using Python. For example, python travel_insurance_script.py.
 
-### `main.py`
-- The main Python script of the project.
+## Usage
+The script defines the following functions:
 
-### `requirements.txt`
-- Specifies all necessary libraries and packages for the project.
+- `load_travel_insurance()`: Loads the dataset into a SQLite database.
+- `create_travel_insurance_entry(data)`: Creates a new entry in the database.
+- `read_all_travel_insurance_entries()`: Reads all entries from the database.
+- `read_travel_insurance_entry_by_id(entry_id)`: Reads a specific entry by ID.
+- `update_travel_insurance_entry(entry_id, data)`: Updates an existing entry.
+- `delete_travel_insurance_entry(entry_id)`: Deletes an entry from the database.
 
-### `test_main.py`
-- Test script designed to validate the functionality of `main.py` within IDEs.
+An example main() function demonstrates the usage of these functions.
 
-### `img`
-- Stores screenshots or images of the project's execution results.
 
-## Continuous Integration with GitHub Actions
 
-The project uses GitHub Actions, employing the following commands:
 
-- `make install`: Installs project dependencies.
-![make install](images/make_install.jpg)
-- `make test`: Runs unit tests.
-![make test](images/make_test.jpg)
-- `make format`: Formats the code according to the specified style.
-- `make lint`: Checks the code for potential errors and style issues.
-![other](images/others.jpg)
-
-### CI Results
-![GitHub Actions](images/github_actions.jpg)
